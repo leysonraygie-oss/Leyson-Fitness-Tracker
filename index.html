@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leyson Fitness Tracker</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0a1f44;
+  color: white;
+  padding: 15px;
+}
+.card {
+  background: #1e3250;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+}
+h2 {
+  margin: 0;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Leyson Fitness Tracker</h1>
+
+<div class="card">
+<h2>Weight</h2>
+<input type="number" id="weight" placeholder="Enter weight">
+</div>
+
+<div class="card">
+<h2>Calories</h2>
+<input type="number" id="calories" placeholder="Enter calories">
+</div>
+
+<div class="card">
+<h2>Protein</h2>
+<input type="number" id="protein" placeholder="Enter protein">
+</div>
+
+<div class="card">
+<h2>Steps</h2>
+<input type="number" id="steps" placeholder="Enter steps">
+</div>
+
+<div class="card">
+<h2>Goal Weight</h2>
+<input type="number" id="goal" placeholder="Enter goal weight">
+</div>
+
+<div class="card">
+<h2>BMI Calculator</h2>
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="bmiWeight" placeholder="Weight (kg)">
+<p id="bmiResult"></p>
+</div>
+
+<script>
+function calculateBMI() {
+  let h = document.getElementById("height").value;
+  let w = document.getElementById("bmiWeight").value;
+
+  if(h && w){
+    let bmi = w / ((h/100)*(h/100));
+    document.getElementById("bmiResult").innerText = "BMI: " + bmi.toFixed(1);
+  }
+}
+
+document.getElementById("height").addEventListener("input", calculateBMI);
+document.getElementById("bmiWeight").addEventListener("input", calculateBMI);
+</script>
+
+</body>
+</html>
